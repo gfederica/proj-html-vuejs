@@ -15,7 +15,7 @@
       <div class="right-nav">
         <ul>
           <li>
-            <img :src="`../assets/images/${flagPath}`" alt="language-flag">
+            <img :src="require(`../assets/images/${flagPath}`)" alt="language-flag">
           </li>
           <li>
             <select name="language" @change="selectedLang(lang)" v-model="lang">
@@ -62,11 +62,11 @@ export default {
   computed: {
     flagPath: function() {
       let newFlag = "";
-      if (this.selected === "ENGLISH") {
+      if (this.selected == "ENGLISH") {
         newFlag = "en.png";
-      } else if (this.selected === "FRENCH") {
+      } else if (this.selected == "FRENCH") {
         newFlag = "fr.png"
-      } else if (this.selected === "GERMAN") {
+      } else if (this.selected == "GERMAN") {
         newFlag = "de.png"
       }
       return newFlag;
