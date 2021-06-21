@@ -1,28 +1,78 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header :listHeader="this.headerList" :listHeaderRight="this.headerRight"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Header from './components/Header.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Header
+  },
+  data: function() {
+        return {
+            headerList: [
+              {
+                item: "Home",
+                active: false
+              },
+              {
+                item: "Pages",
+                active: false
+              },
+              {
+                item: "Courses",
+                active: false
+              },
+              {
+                item: "Features",
+                active: false
+              },
+              {
+                item: "Blog",
+                active: false
+              },
+              {
+                item: "Shop",
+                active: false
+              }
+            ],
+            headerRight : [
+              {
+                langFlag: require('./assets/images/en.png'),
+                language: "ENGLISH"
+              },
+              {
+                langFlag: require('./assets/images/de.png'),
+                language: "GERMAN"
+              },
+              {
+                langFlag: require('./assets/images/fr.png'),
+                language: "FRENCH"
+              }
+            ]
+        }
+    }
 }
 </script>
 
 <style lang="scss">
+@import '~bootstrap/scss/bootstrap';
+@import './style/general.scss';
+@import './style/mixins.scss';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 </style>
