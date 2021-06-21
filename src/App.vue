@@ -43,15 +43,15 @@ export default {
             ],
             headerRight : [
               {
-                langFlag: require('./assets/images/en.png'),
+                langFlag: "en.png",
                 language: "ENGLISH"
               },
               {
-                langFlag: require('./assets/images/de.png'),
+                langFlag: "de.png",
                 language: "GERMAN"
               },
               {
-                langFlag: require('./assets/images/fr.png'),
+                langFlag: "fr.png",
                 language: "FRENCH"
               }
             ]

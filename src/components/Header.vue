@@ -15,12 +15,12 @@
       <div class="right-nav">
         <ul>
           <li>
-            <img :src="listHeaderRight[0].langFlag" alt="language-flag">
+            <img :src="`../assets/images/${flagPath}`" alt="language-flag">
           </li>
           <li>
-            <select name="language">
+            <select name="language" @change="selectedLang(lang)" v-model="lang">
               <!-- v-model="selected" @change="$emit('changeLanguage', selected)" -->
-              <option v-for="(list, index) in listHeaderRight" :key="index" >{{list.language}}</option>
+              <option v-for="(list, index) in listHeaderRight" :key="index">{{list.language}}</option>
               <!-- :value="language" -->
             </select>
           </li>   
@@ -47,6 +47,30 @@ export default {
   props: {
     listHeader: Array,
     listHeaderRight: Array
+  },
+  data: function() {
+    return {
+      selected: ""
+    }
+  },
+  methods: {
+    selectedLang: function(lang) {
+      this.selected = lang;
+      console.log(this.selected);
+    }
+  },
+  computed: {
+    flagPath: function() {
+      let newFlag = "";
+      if (this.selected === "ENGLISH") {
+        newFlag = "en.png";
+      } else if (this.selected === "FRENCH") {
+        newFlag = "fr.png"
+      } else if (this.selected === "GERMAN") {
+        newFlag = "de.png"
+      }
+      return newFlag;
+    }
   }
 }
 </script>
