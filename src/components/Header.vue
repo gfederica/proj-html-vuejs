@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <!-- logo -->
       <div class="logo">
-        <img src="../assets/images/dark-logo.png" alt="logo">
+        <img src="../assets/dark-logo.png" alt="logo">
       </div>
       <!-- nav centrale -->
       <div class="main-nav">
@@ -15,13 +15,12 @@
       <div class="right-nav">
         <ul>
           <li>
-            <img :src="require(`../assets/images/${flagPath}`)" alt="language-flag">
+            <img :src=flagPath alt="language-flag">
+            <!-- :src="require(`../assets/${flagPath}`)" -->
           </li>
           <li>
             <select name="language" @change="selectedLang(lang)" v-model="lang">
-              <!-- v-model="selected" @change="$emit('changeLanguage', selected)" -->
               <option v-for="(list, index) in listHeaderRight" :key="index">{{list.language}}</option>
-              <!-- :value="language" -->
             </select>
           </li>   
           <li>
@@ -32,7 +31,7 @@
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search...">
               </div>
-              <button type="submit" class="btn btn-outline-secondary"><i class="fas fa-search"></i></button>
+              <button type="submit" class="btn btn-outline-secondary" @click.prevent><i class="fas fa-search"></i></button>
             </form>
           </li>       
         </ul>
@@ -50,7 +49,8 @@ export default {
   },
   data: function() {
     return {
-      selected: ""
+      selected: "",
+      lang: ""
     }
   },
   methods: {
@@ -63,11 +63,11 @@ export default {
     flagPath: function() {
       let newFlag = "";
       if (this.selected == "ENGLISH") {
-        newFlag = "en.png";
+        newFlag = require(`../assets/en.png`)
       } else if (this.selected == "FRENCH") {
-        newFlag = "fr.png"
+        newFlag = require(`../assets/fr.png`)
       } else if (this.selected == "GERMAN") {
-        newFlag = "de.png"
+        newFlag = require(`../assets/de.png`)
       }
       return newFlag;
     }
