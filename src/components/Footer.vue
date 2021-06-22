@@ -3,7 +3,7 @@
       <div class="container-60">
         <div class="summary">
              <div v-for="(item, index) in summary" :key="index" class="cols">
-                <h3>{{item.title}}</h3>
+                <h5>{{item.title}}</h5>
                 <ul>
                     <li v-for="(itemSub,index) in item.subtitle" :key="index"><a href="">{{itemSub}}</a></li>
                 </ul>
@@ -72,15 +72,14 @@ export default {
 footer {
     background-color: $darkBlue;
 
-    h3 {
+    h5 {
         color: $white;
         font-weight: 600;
-        font-size: $h3;
+        font-size: $h5;
     }
 
     .container-60 {
         @include container-60;
-        margin: auto;
         padding: 60px 0px;
 
         .summary {
@@ -101,7 +100,7 @@ footer {
 
                 & li {
                     margin-right: 24px;
-                    font-size: $h3;
+                    font-size: $h5;
                 }
             }
         }

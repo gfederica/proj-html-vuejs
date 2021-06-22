@@ -15,12 +15,14 @@
       <div class="right-nav">
         <ul>
           <li>
-            <img :src=flagPath alt="language-flag">
+            <img src="../assets/en.png" alt="language-flag" v-if='this.selected == ""'>
+            <img v-else :src=flagPath alt="language-flag">
             <!-- :src="require(`../assets/${flagPath}`)" -->
           </li>
           <li>
             <select name="language" @change="selectedLang(lang)" v-model="lang">
-              <option v-for="(list, index) in listHeaderRight" :key="index">{{list.language}}</option>
+              <option v-if='this.selected == ""' selected value="">ENGLISH</option>
+              <option v-for="(list, index) in listHeaderRight" :key="index" selected>{{list.language}}</option>
             </select>
           </li>   
           <li>
@@ -81,8 +83,11 @@ export default {
 @import '../style/mixins.scss';
  
  header {
-   color: $darkSilver;
-   @include ul-clean;
+    position: sticky;
+    z-index: 2;
+    background-color: white;
+    color: $darkSilver;
+    @include ul-clean;
 
    .container-fluid {
     height: 80px;
@@ -105,7 +110,7 @@ export default {
       & li a {
         @include link-clean;
         color: $darkSilver;
-        font-size: $h3;
+        font-size: $h5;
       }
     }
 
