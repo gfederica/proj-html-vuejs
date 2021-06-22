@@ -1,10 +1,17 @@
 <template>
   <footer>
-      <div class="container-70">
-        <div v-for="(item, index) in summary" :key="index">
-            <h3>{{item.title}}</h3>
+      <div class="container-60">
+        <div class="summary">
+             <div v-for="(item, index) in summary" :key="index" class="cols">
+                <h3>{{item.title}}</h3>
+                <ul>
+                    <li v-for="(itemSub,index) in item.subtitle" :key="index"><a href="">{{itemSub}}</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social">
             <ul>
-                <li v-for="(itemSub,index) in item.subtitle" :key="index"><a href="">{{itemSub}}</a></li>
+                <li v-for="(contact, index) in contacts" :key="index"><i :class="`${contact.iconClass}`"></i></li>
             </ul>
         </div>
       </div>
@@ -18,34 +25,38 @@ export default {
         return {
             summary: [
                 {
-                title: "Address",
-                subtitle: ["382 NE 191st St# 87394 Miami, FL 33179-3899", "+1(305)547-9909 (9am - 5pm EST, Monday - Friday)", "support@maxcoach.com"]
+                    title: "Address",
+                    subtitle: ["382 NE 191st St# 87394 Miami, FL 33179-3899", "+1(305)547-9909 (9am - 5pm EST, Monday - Friday)", "support@maxcoach.com"]
                 },
                 {
-                title: "Explore",
-                subtitle: ["Start here", "Blog", "About us", "Success Story", "Courses", "Contact us"]
+                    title: "Explore",
+                    subtitle: ["Start here", "Blog", "About us"]
                 },
                 {
-                title: "Information",
-                subtitle: ["Membership", "Purchase guide", "Privacy policy", "Terms of service"]
+                    title: "",
+                    subtitle: ["Success Story", "Courses", "Contact us"]
+                },
+                {
+                    title: "Information",
+                    subtitle: ["Membership", "Purchase guide", "Privacy policy", "Terms of service"]
                 }
             ],
             contacts: [
                 {
                     name: "facebook",
-                    iconClass: '<i class="fab fa-facebook-square"></i>'
+                    iconClass: 'fab fa-facebook-square'
                 },
                 {
                     name: "twitter",
-                    iconClass: '<i class="fab fa-twitter"></i>'
+                    iconClass: 'fab fa-twitter'
                 },
                 {
                     name: "instagram",
-                    iconClass: '<i class="fab fa-instagram"></i>'
+                    iconClass: 'fab fa-instagram'
                 },
                 {
                     name: "linkedin",
-                    iconClass: '<i class="fab fa-linkedin"></i>'
+                    iconClass: 'fab fa-linkedin'
                 }
                 
             ]
@@ -64,25 +75,49 @@ footer {
     h3 {
         color: $white;
         font-weight: 600;
+        font-size: $h3;
     }
 
-    .container-70 {
-    @include container-70;
-    @include flex;
-    padding: 100px 0px;
-    margin: auto;
+    .container-60 {
+        @include container-60;
+        margin: auto;
+        padding: 60px 0px;
 
+        .summary {
+        @include flex-space-between;
 
-    ul {
-        @include ul-clean;
-
-        li, a {
-            color: $white;
-            text-decoration: none;
+            & div:nth-child(1) {
+                width: 55%;
+            }
         }
 
-    }
 
+        .social {
+            width: 55%;
+            margin-top: -20px;
+
+           & ul {
+                @include flex-vertical-only;
+
+                & li {
+                    margin-right: 24px;
+                    font-size: $h3;
+                }
+            }
+        }
+
+        ul {
+            @include ul-clean;
+            height: 80px;
+
+            li, a {
+                @include link-clean;
+                color: $silver;
+                padding: 5px 0;
+                font-size: $smallText;
+            }
+
+        }
     }
 }
 

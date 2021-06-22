@@ -6,6 +6,12 @@
      align-items: center;
      justify-content: space-between;
  }
+
+ @mixin flex-space-between {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+ }
  @mixin flex-vertical-only {
      display: flex;
      align-items: center;
@@ -22,7 +28,11 @@
     padding: 0;
 }
 
-@mixin container-70 {
-    width: 70%;
+@mixin link-clean {
+    text-decoration: none;
+}
+
+@mixin container-60 {
+    width: 60%;
 }
 

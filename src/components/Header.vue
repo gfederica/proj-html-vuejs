@@ -8,7 +8,7 @@
       <!-- nav centrale -->
       <div class="main-nav">
         <ul>
-          <li v-for="(list, index) in listHeader" :key="index">{{list.item}}<i class="fas fa-chevron-down"></i></li>
+          <li v-for="(list, index) in listHeader" :key="index" @click.prevent><a href="">{{list.item}}<i class="fas fa-chevron-down"></i></a></li>
         </ul>
       </div>
       <!-- nav dx -->
@@ -99,8 +99,13 @@ export default {
     @include ul-clean;
 
       & li i{
-        font-size: 10px;
         padding-left: 4px;
+      }
+
+      & li a {
+        @include link-clean;
+        color: $darkSilver;
+        font-size: $h3;
       }
     }
 
