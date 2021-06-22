@@ -77,7 +77,7 @@ export default {
 
     a {
         @include link-clean;
-        font-size: $h5;
+        font-size: $mediumSmallText;
         color: $mainGreen;
         font-weight: 600;
 
@@ -99,7 +99,7 @@ export default {
         }
 
         p {
-            font-size: 12px;
+            font-size: $mediumSmallText;
             color: $mainGrey;
             height: 100%;
         }
@@ -109,10 +109,14 @@ export default {
             font-weight: 500;
         }
 
+        .card-body {
+            padding: 18px;
+        }
+
         .list-group {
-                text-align: center;
-                width: 100%;
-                border-top: 1px solid $jumbotron;
+            text-align: center;
+            width: 100%;
+            border-top: 1px solid $jumbotron;
         }
 }
 
