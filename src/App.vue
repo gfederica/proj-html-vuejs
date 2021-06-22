@@ -2,6 +2,7 @@
   <div id="app">
     <Header :listHeader="this.headerList" :listHeaderRight="this.headerRight"/>
     <Jumbotron/>
+    <Together/>
     <Footer/>
 
   </div>
@@ -12,13 +13,15 @@
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Jumbotron from './components/Jumbotron.vue'
+import Together from './components/Together.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
     Footer,
-    Jumbotron
+    Jumbotron,
+    Together
   },
   data: function() {
         return {

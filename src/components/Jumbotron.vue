@@ -5,7 +5,7 @@
               <h2>New Challenges, New Skills</h2>
               <h1>BUILD YOUR OWN LIFE COACHING BUSINESS</h1>
               <h5>Whole-Life Business Coaching for committed entrepreneurs</h5>
-              <button>Get started today</button>
+              <button class="button-full">Get started today</button>
           </div>
           <div class="images">
               <img src="../assets/home-business-hero-global-image.png" alt="globe" id="jumbo-globe">
@@ -32,14 +32,13 @@ export default {
     .container-60 {
         @include flex;
         align-items: flex-start;
-        @include container-60;
 
         .content {
             padding: 80px 0;
             width: 40%;
 
             & * {
-                padding: 8px 0;
+                margin: 12px 0;
             }
 
             h1 {
@@ -58,12 +57,6 @@ export default {
                 line-height: 24px;
             }
 
-            button {
-                margin-top: 6px;
-                font-size: $smallText;
-                @include btn-full;
-                font-weight: 500;
-            }
         }
 
         .images {

@@ -16,3 +16,27 @@ $h5: 14px;
 $smallText: 10px;
 
 
+.container-60 {
+    width: 60%;    
+    margin: auto;
+}
+
+button {
+    font-size: $smallText;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.button-full {
+    border: 1px solid $mainGreen;
+    background-color: $mainGreen;
+    color: $white;
+    padding: 10px 30px;
+}
+.button-empty {
+    border: 1px solid $silver;
+    background-color: $white;
+    color: $mainGreen;
+    padding: 10px 40px;
+}
+

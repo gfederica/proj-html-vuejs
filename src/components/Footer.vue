@@ -79,7 +79,6 @@ footer {
     }
 
     .container-60 {
-        @include container-60;
         padding: 60px 0px;
 
         .summary {
