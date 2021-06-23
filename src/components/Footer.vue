@@ -82,7 +82,7 @@ footer {
         padding: 60px 0px;
 
         .summary {
-        @include flex-space-between;
+        @include flex;
 
             & div:nth-child(1) {
                 width: 55%;
