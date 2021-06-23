@@ -7,6 +7,7 @@
     <Video/>
     <Upcoming/>
     <Reviews/>
+    <Subscribe/>
     <Footer/>
 
   </div>
@@ -22,6 +23,7 @@ import Explore from './components/Explore.vue'
 import Video from './components/Video.vue'
 import Upcoming from './components/Upcoming.vue'
 import Reviews from './components/Reviews.vue'
+import Subscribe from './components/Subscribe.vue'
 
 export default {
   name: 'App',
@@ -33,7 +35,8 @@ export default {
     Explore,
     Video,
     Upcoming,
-    Reviews
+    Reviews,
+    Subscribe
   },
   data: function() {
         return {

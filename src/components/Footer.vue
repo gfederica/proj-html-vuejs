@@ -14,6 +14,10 @@
                 <li v-for="(contact, index) in contacts" :key="index"><i :class="`${contact.iconClass}`"></i></li>
             </ul>
         </div>
+        <h6 class="text-center">© 2020 Maxcoach. All Rights Reserved</h6>
+      </div>
+      <div class="back-up">
+          <a href=""><i class="fas fa-arrow-up"></i></a>
       </div>
   </footer>
 </template>
@@ -71,6 +75,20 @@ export default {
 
 footer {
     background-color: $darkBlue;
+    position: relative;
+
+    .back-up {
+        position: absolute;
+        right: 40px;
+        bottom: 20px;
+        background-color: $mainGreen;
+        border-radius: 50%;
+        padding: 20px 26px;
+
+        a {
+            color: $white;
+        }
+    }
 
     h5 {
         color: $white;
@@ -116,6 +134,12 @@ footer {
             }
 
         }
+    }
+
+    h6 {
+        font-size: $smallText;
+        color: $silver;
+        margin-top: 20px;
     }
 }
 

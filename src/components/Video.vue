@@ -43,7 +43,7 @@ export default {
 @import '../style/mixins.scss';
 
 .video  {
-    background-color: #323043;
+    background-color: $darkPurple;
     padding: 80px 0;
     position: relative;
 

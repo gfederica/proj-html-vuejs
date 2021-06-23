@@ -12,6 +12,14 @@
               <img src="../assets/home-business-hero-avatar.png" alt="avatar" id="jumbo-avatar">
           </div>
       </div>
+      <div class="bookmark">
+          <ul>
+              <li><img src="../assets/square-ruler.png" alt="ruler"></li>
+              <li><img src="../assets/life-saver.png" alt="lifesaver"></li>
+              <li><img src="../assets/book.png" alt="book"></li>
+              <li><img src="../assets/cart.png" alt="cart"></li>
+          </ul>
+      </div>
   </section>
 </template>
 
@@ -28,6 +36,7 @@ export default {
 
 .jumbotron {
     background-color: $jumbotron;
+    position: relative;
 
     .container-60 {
         @include flex;
@@ -82,6 +91,34 @@ export default {
         }
 
 
+    }
+
+    .bookmark {
+        position: absolute;
+        top: 100px;
+        right: 0px;
+        background-color: $white;
+        padding: 10px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+
+        ul {
+            @include ul-clean;
+            list-style: none;
+
+            li:not(:first-child) {
+                margin-top: 10px;
+            }
+
+            li:hover {
+                cursor: pointer;
+            }
+
+            & li img {
+                width: 14px;
+                
+            }
+        }
     }
 }
 </style>
