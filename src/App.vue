@@ -4,6 +4,8 @@
     <Jumbotron/>
     <Together/>
     <Explore/>
+    <Video/>
+    <Upcoming/>
     <Footer/>
 
   </div>
@@ -16,6 +18,8 @@ import Footer from './components/Footer.vue'
 import Jumbotron from './components/Jumbotron.vue'
 import Together from './components/Together.vue'
 import Explore from './components/Explore.vue'
+import Video from './components/Video.vue'
+import Upcoming from './components/Upcoming.vue'
 
 export default {
   name: 'App',
@@ -24,7 +28,9 @@ export default {
     Footer,
     Jumbotron,
     Together,
-    Explore
+    Explore,
+    Video,
+    Upcoming
   },
   data: function() {
         return {

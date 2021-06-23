@@ -10,7 +10,11 @@
  @mixin flex-space-between {
      display: flex;
      align-items: center;
-     justify-content: space-between;
+ }
+ @mixin flex-space-evenly {
+     display: flex;
+     align-items: center;     
+     justify-content: space-evenly;
  }
  @mixin flex-vertical-only {
      display: flex;
