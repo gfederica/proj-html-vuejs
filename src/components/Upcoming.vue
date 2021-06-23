@@ -1,4 +1,5 @@
 <template>
+<div class="wrapper-bg">
   <section class="upcoming">
       <div class="container-60">
           <h2 class="text-center">Wanna Transform your life?</h2>
@@ -77,6 +78,7 @@
 
       </div>
   </section>
+  </div>
 </template>
 
 <script>
@@ -101,6 +103,15 @@ h1 {
 h3 {
     font-size: $h3;
     color: $mainText;
+}
+
+.wrapper-bg {
+    background-color: $exploreGrey;
+}
+.upcoming {
+    background-color: $white;
+    padding: 80px 0;
+    border-bottom-right-radius: 300px;
 }
 
 .event-list {

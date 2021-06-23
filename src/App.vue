@@ -6,6 +6,7 @@
     <Explore/>
     <Video/>
     <Upcoming/>
+    <Reviews/>
     <Footer/>
 
   </div>
@@ -20,6 +21,7 @@ import Together from './components/Together.vue'
 import Explore from './components/Explore.vue'
 import Video from './components/Video.vue'
 import Upcoming from './components/Upcoming.vue'
+import Reviews from './components/Reviews.vue'
 
 export default {
   name: 'App',
@@ -30,7 +32,8 @@ export default {
     Together,
     Explore,
     Video,
-    Upcoming
+    Upcoming,
+    Reviews
   },
   data: function() {
         return {
@@ -94,4 +97,5 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
+
 </style>
